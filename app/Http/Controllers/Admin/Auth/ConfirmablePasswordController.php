@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Admin\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
@@ -16,12 +16,13 @@ class ConfirmablePasswordController extends Controller
      */
     public function show(): View
     {
-        return view('auth.confirm-password');
+        return view('admin.auth.confirm-password');
     }
 
     /**
      * Confirm the user's password.
      */
+
     public function store(Request $request): RedirectResponse
     {
         if (! Auth::guard('web')->validate([
